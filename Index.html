@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=div, initial-scale=1.0">
+    <title>Countdown Timer</title>
+    <style>
+        *{ margin:0;
+          padding: 0; 
+         background-color: grey;
+        }
+
+        #first{
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        p{
+            height: 100px;
+            width: 600px;
+            background-color: #ff7f7f;
+            box-shadow: insert 0 0 10px #000000;
+            color:white;
+            line-height: 100px;
+            text-align:center;
+            font-size:60px;
+            margin-top:0px;
+            box-shadow: 1px 1px 0px #000,
+                         2px 2px 0px #000,
+                         3px 3px 0px #000,
+                         4px 4px 0px #000,
+                         5px 5px 0px #000;
+        }
+
+       
+    </style>
+</head>
+<body>
+    <div id="first">
+
+        <h1>COUNTDOWN TIMER</h1>
+        <p id="demo">
+
+        </p>
+    </div>
+
+    <script>
+
+         
+     var dest = new Date("August 30,2022 9:30:30").getTime();
+
+     var x = setInterval(function() {
+
+     var now = new Date().getTime();
+
+     var diff = dest - now ;
+
+     var days = Math.floor(diff/ (1000*24*60*60));
+
+    var hours = Math.floor((diff % (1000*60*60*24)) / (1000*60));
+
+    var minute = Math.floor((diff % (1000*60*60)) / (1000*60));
+
+    var second = Math.floor((diff % (1000*60)) / 1000);
+    
+
+    document.getElementById("demo").innerHTML = days +"d, " + hours + "hrs: " + minute + "m: " + second + "s "
+
+    }, 1000 );
+     
+
+        </script>
+
+</body>
+</html>
